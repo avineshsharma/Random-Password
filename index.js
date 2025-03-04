@@ -1,12 +1,11 @@
-let lengthSlider = document.getElementById("lengthSlider");
+let lengthSlider = document.getElementById('lengthSlider')
 let sliderValue = document.getElementById('sliderValue')
 
-sliderValue.textContent = lengthSlider.value;
-lengthSlider.addEventListener("input", () => {
-    sliderValue.textContent = lengthSlider.value;
+sliderValue.textContent = lengthSlider.value
+
+lengthSlider.addEventListener("input", ()=>{
+    sliderValue.textContent = lengthSlider.value
 })
-
-
 
 let checkboxes = document.querySelectorAll('.checkbox')
 
@@ -25,10 +24,9 @@ Array.from(checkboxes).forEach(Element=>{
     })
 })
 
+let includeLabels = document.querySelectorAll('.row label')
 
-let includelabels = document.querySelectorAll('.row label')
-
-Array.from(includelabels).forEach(Element=>{
+Array.from(includeLabels).forEach(Element=>{
     Element.addEventListener('click',(e)=>{
         if(e.target.previousElementSibling.innerText == 'radio_button_unchecked'){
             e.target.previousElementSibling.innerText = 'task_alt'
@@ -41,50 +39,42 @@ Array.from(includelabels).forEach(Element=>{
 })
 
 
-
-
 let generateBtn = document.getElementById('generateBtn')
 let password = document.getElementById('password')
 
-
-   generateBtn.addEventListener('click', () => {
+generateBtn.addEventListener('click', function(){
     let length = lengthSlider.value
-    let uppercase = document.getElementById('uppercase').Checked
-    let lowercase = document.getElementById('lowercase').Checked
-    let Symbols = document.getElementById('Symbols').Checked
-    let numbers = document.getElementById('numbers').Checked
 
+    let uppercase = document.getElementById('uppercase').checked
+    let lowercase = document.getElementById('lowercase').checked
+    let symbols = document.getElementById('symbols').checked
+    let numbers = document.getElementById('numbers').checked
 
-    let password = generatepass(length, uppercase, lowercase, Symbols, numbers)
-    password.value = password._generated
+    let password_generated = generatePassword(length, uppercase, lowercase, symbols, numbers)
+
+    password.value = password_generated
 })
 
+function generatePassword(length, uppercase, lowercase, symbols, numbers){
 
-function generatepass(length, uppercase, lowercase, Symbols, numbers) {
     let charset = ""
     let string = ""
-    if (uppercase) {
-        charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    }
-    if (lowercase) {
-        charset += "abcdefghijklmnopqrstuvwxyz"
-    }
-    if (Symbols) {
-        charset += "!@#$%^&*()_+-={}:<>?"
-    }
 
-    if (numbers) {
-        charset += "0123456789"
-    }
+    if(uppercase) charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-
-    for (let i = 0; i < length; i++) {
-
-      string += charset.charAt(Math.random() * charset.length)
-
-    }
+    if(lowercase) charset += "abcdefghijklmnopqrstuvwxyz";
     
+    if(symbols) charset += "!@#$%^&*()";
+    
+    if(numbers) charset += "0123456789";
+
+    for(let i=0; i<length; i++){
+
+       string += charset.charAt(Math.floor(Math.random()*charset.length))
+    }
+
     return string;
+    
 
 }
 

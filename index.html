@@ -21,9 +21,9 @@
         </h2>
         <div class="passwordbox">
             <input type="text" id="password" placeholder="password" readonly>
-            <span id="copyIcon" class="material-symbols-outlined" onclick="copyPassword()">
+            <!-- <span id="copyIcon" class="material-symbols-outlined" onclick="copyPassword()">
                 content_copy
-            </span>
+            </span> -->
         </div>
         <div class="lengthrow">
             <p>password Length</p>
@@ -50,16 +50,13 @@
             </label>
             <input type="checkbox" id="lowercase">
         </div>
-        
         <div class="row">
             <span class="material-symbols-outlined checkbox">
-                radio_button_unchecked
-              </span>
-             <label for="Symbols" class="includeLabel">Symbols(@#$)
-
-            </label>
-            <input type="checkbox" id="Symbols">
-        </div>
+              radio_button_unchecked
+            </span>
+            <label for="symbols" class="includeLabel">Include Symbols(#@-!)</label>
+            <input type="checkbox" id="symbols" hidden />
+          </div>
         
         <div class="row">
             <span class="material-symbols-outlined checkbox">
