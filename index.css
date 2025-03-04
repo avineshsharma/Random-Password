@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     margin: 0;
     padding: 0;
@@ -135,4 +136,74 @@ button{
 button span{
     margin-inline:5px ;
     
+=======
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: white;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    place-content: center;
+}
+
+.container {
+    background-color: aliceblue;
+    padding: 10px 30px;
+    width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+h2 {
+    margin: 15px 5px;
+    color: rgb(12, 100, 231);
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+h2 span {
+    text-decoration: 4px underline rgb(6, 6, 219);
+    text-underline-offset: 10px;
+}
+
+.passwordbox {
+    position: relative;
+    margin: 15px 0px;
+}
+
+#password {
+    width: 355px;
+    padding: 10px 20px;
+    outline: 0;
+    border: 3px solid rgb(12, 100, 231);
+    border-radius: 5px;
+    color: #1a237e;
+    font-weight: 600;
+}
+#password::placeholder{
+    font-weight: 400;
+
+}
+.passwordbox span{
+    position: absolute;
+    top: 20%;
+    right: 10px;
+    font-size: 28px;
+    color: #1a237e;
+    font-weight: 900;
+
+}
+.lengthrow{
+ margin-top: 20px;
+ display: flex;
+ justify-content: space-between;
+ font-weight: 600;   
+>>>>>>> 3e67212b41f4296b2b5f1b8f07623db5a8f56898
 }
